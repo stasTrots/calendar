@@ -1,0 +1,133 @@
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modalContent {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  background-color: #fff;
+  padding: 20px 0px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  width: 100vw;
+  max-width: 400px;
+  z-index: 1000;
+  color: #000;
+  display: grid;
+  place-items: center;
+}
+.calendar {
+  width: 320px;
+  font-family: sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  align-items: center;
+}
+.headerButton {
+  background-color: transparent; 
+  padding: .25em .5em;
+  transition: all .2s;
+}
+.headerButton:hover {
+  background-color: #1976d278;
+  border-color: transparent;
+}
+.arrowButton {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(1209%) hue-rotate(188deg) brightness(101%) contrast(84%);
+}
+.selects {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.select {
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 4;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  appearance: none;
+  /* -webkit-appearance: none; */
+  -moz-appearance: none;
+}
+.weekDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.weekDay {
+  text-align: center;
+  padding: 4px 0;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4;
+}
+.day {
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 50%;
+}
+.selectedDay {
+  background-color: #1976d2;
+  color: #fff;
+}
+.rangeDay {
+  background-color: #90caf9;
+  color: #000;
+}
+.today {
+  border: 1px solid #1976d2;
+}
+.disabledDay {
+  color: #aaa;
+  cursor: not-allowed;
+}
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  margin-top: 12;
+}
+.footerButton {
+  background-color: transparent;
+  color: rgb(2, 77, 223);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 8px 16px;
+  transition: all .2s;
+}
+.footerButton:hover {
+  background-color: #1565c0;
+  color: #fff;
+}
+.footerCancelButton {
+  border: 1px solid rgb(2, 77, 223);
+  justify-self: end
+}
+.footerApplyButton {
+  color: #fff;
+  background-color: rgb(2, 77, 223);
+  justify-self: end
+}
