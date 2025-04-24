@@ -37,6 +37,8 @@ const SelectDate: React.FC<SelectDateProps> = ({openModal, title}) => {
             placeholder="DD.MM.YYYY"
             value={inputState.start || ''}
             onClick={() => openModal(true)}
+            readOnly
+            onFocus={(e) => e.target.blur()}
             className={styles.input}
           />
         </label>
@@ -48,6 +50,8 @@ const SelectDate: React.FC<SelectDateProps> = ({openModal, title}) => {
           placeholder="DD.MM.YYYY"
           value={inputState.end || ''}
           onClick={() => openModal(true)}
+          readOnly
+          onFocus={(e) => e.target.blur()}
           className={styles.input}
         />
         </label>
