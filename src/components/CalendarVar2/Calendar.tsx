@@ -46,11 +46,11 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    return `${day}.${month}.${year}`;
   };
 
   const parseDate = (value: string): Date | null => {
-    const [day, month, year] = value.split("/").map(Number);
+    const [day, month, year] = value.split(".").map(Number);
     if (!day || !month || !year) return null;
     const date = new Date(year, month - 1, day);
     return isNaN(date.getTime()) ? null : date;
@@ -59,7 +59,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
   const formatInputWithSlashes = (value: string): string => {
     const digits = value.replace(/\D/g, '').slice(0, 8);
     const parts = [digits.slice(0, 2), digits.slice(2, 4), digits.slice(4, 8)];
-    return parts.filter(Boolean).join('/');
+    return parts.filter(Boolean).join('.');
   };
 
   const handleStartInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,7 +77,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
   };
 
   const isValidDate = (value: string) => {
-    const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+    const regex = /^\d{2}\.\d{2}\.\d{4}$/;
     const date = parseDate(value);
     return regex.test(value) && date !== null;
   };
@@ -175,7 +175,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
                 <span>Start Date</span>
                 <input
                   type="text"
-                  placeholder="DD/MM/YYYY"
+                  placeholder="DD.MM.YYYY"
                   value={startInput}
                   onChange={handleStartInputChange}
                   className={styles.input}
@@ -189,7 +189,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
                 <span>End Date</span>
                 <input
                 type="text"
-                placeholder="DD/MM/YYYY"
+                placeholder="DD.MM.YYYY"
                 value={endInput}
                 onChange={handleEndInputChange}
                 className={styles.input}
@@ -235,7 +235,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
             <span>Start Date</span>
             <input
               type="text"
-              placeholder="DD/MM/YYYY"
+              placeholder="DD.MM.YYYY"
               value={startInput}
               onChange={handleStartInputChange}
               className={styles.input}
@@ -259,7 +259,7 @@ const DateRangePicker: React.FC<DatePickerProps> = ({modalOpen, closeCalendar, h
             <span>End Date</span>
             <input
             type="text"
-            placeholder="DD/MM/YYYY"
+            placeholder="DD.MM.YYYY"
             value={endInput}
             onChange={handleEndInputChange}
             className={styles.input}

@@ -1,0 +1,42 @@
+.containerInputs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 0 0 24px 0;
+}
+
+.input {
+  background-color: transparent;
+  color: #000;
+
+  border: none;
+  border-bottom: 1px solid rgb(2, 77, 223);
+
+  border-radius: 6px;
+
+  padding: 10px 35px;
+
+  width: 100%;
+
+  cursor: pointer;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+
+  bottom: 10px;
+  left: 6px;
+
+  filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(3976%) hue-rotate(221deg) brightness(97%) contrast(100%);
+}
+
+@media screen and (max-width: 578px) {
+  .containerInputs {
+    display: flex;
+    flex-direction: column;
+  }
+}
