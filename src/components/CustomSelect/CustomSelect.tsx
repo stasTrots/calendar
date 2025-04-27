@@ -21,7 +21,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, value, onChang
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  console.log(options, value)
+
   return (
     <div ref={dropdownRef} className={styles.dropdown}>
       <div
