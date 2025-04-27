@@ -14,6 +14,19 @@
 
   position: relative;
 }
+.selectIcon {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+
+  top: 50%;
+  left: 6px;
+
+  transform: translateY(-50%);
+
+  filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(3976%) hue-rotate(221deg) brightness(97%) contrast(100%);
+}
 .arrow {
   position: absolute;
   right: 5px;

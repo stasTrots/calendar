@@ -14,12 +14,12 @@ const App: React.FC = () => {
   const [calendar1State, setCalendar1State] = useState<string>('')
   const [calendar2State, setCalendar2State] = useState<string>('')
   const [time1State, setTime1State] = useState<ITimeState>({
-    start: '00.00',
-    end: '00.00'
+    start: '00:00',
+    end: '00:00'
   })
   const [time2State, setTime2State] = useState<ITimeState>({
-    start: '00.00',
-    end: '00.00'
+    start: '00:00',
+    end: '00:00'
   })
 
   const handleOpenCalendar1 = (value: boolean) => {

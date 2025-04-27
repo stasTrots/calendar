@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ITimeState } from '../../App'
 import calendarSvg from '../../assets/calendar-symbol-svgrepo-com.svg'
+import timeIcon from '../../assets/time-svgrepo-com.svg'
 import CustomDropdown from '../CustomSelect/CustomSelect'
 import styles from './SelectDate.module.css'
 
@@ -57,7 +58,7 @@ const SelectDate: React.FC<SelectDateProps> = ({openModal, title, timeChange, ti
               onFocus={(e) => e.target.blur()}
               className={styles.input}
             />
-            <CustomDropdown onChange={(value) => timeChange(value.toString(), 'start')} options={timeOptions} value={timeState.start}/>
+            <CustomDropdown onChange={(value) => timeChange(value.toString(), 'start')} options={timeOptions} value={timeState.start} icon={timeIcon}/>
           </div>
           
         </div>
@@ -74,7 +75,7 @@ const SelectDate: React.FC<SelectDateProps> = ({openModal, title, timeChange, ti
               onFocus={(e) => e.target.blur()}
               className={styles.input}
             />
-            <CustomDropdown onChange={(value) => timeChange(value.toString(), 'end')} options={timeOptions} value={timeState.end}/>
+            <CustomDropdown onChange={(value) => timeChange(value.toString(), 'end')} options={timeOptions} value={timeState.end} icon={timeIcon}/>
           </div>
           
         </div>

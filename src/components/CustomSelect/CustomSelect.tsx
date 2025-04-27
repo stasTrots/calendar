@@ -5,9 +5,10 @@ interface CustomDropdownProps {
   options: string[] | number[];
   value: string | number;
   onChange: (val: string | number) => void;
+  icon?: string
 }
 
-const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, value, onChange }) => {
+const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, value, onChange, icon }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -20,13 +21,17 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, value, onChang
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
+  console.log(options, value)
   return (
     <div ref={dropdownRef} className={styles.dropdown}>
       <div
         className={styles.selected}
+        style={{
+          ...(icon && {paddingLeft: '30px'})
+        }}
         onClick={() => setOpen((prev) => !prev)}
       >
+        {icon && <img src={icon} className={styles.selectIcon} alt="Calendar img" />}
         {value} 
         <span className={styles.arrow}>▾</span>
       </div>
