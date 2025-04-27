@@ -27,7 +27,8 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, value, onChang
         className={styles.selected}
         onClick={() => setOpen((prev) => !prev)}
       >
-        {value} ▾
+        {value} 
+        <span className={styles.arrow}>▾</span>
       </div>
       {open && (
         <div className={styles.menu}>

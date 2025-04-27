@@ -11,6 +11,12 @@
   background-color: #fff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  right: 5px;
 }
 .menu {
   position: absolute;

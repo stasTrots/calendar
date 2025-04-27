@@ -10,12 +10,10 @@
   background-color: transparent;
   color: #000;
 
-  border: none;
-  border-bottom: 1px solid rgb(2, 77, 223);
+  border: 1px solid #ccc;
+  border-radius: 4px;
 
-  border-radius: 6px;
-
-  padding: 10px 35px;
+  padding: 5px 5px 5px 35px;
 
   width: 100%;
 
@@ -28,10 +26,18 @@
 
   position: absolute;
 
-  bottom: 10px;
+  bottom: 9px;
   left: 6px;
 
   filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(3976%) hue-rotate(221deg) brightness(97%) contrast(100%);
+}
+
+.timeButton {
+  border-bottom: 1px solid rgb(2, 77, 223);
+
+  border-radius: 6px;
+
+  padding: 5px;
 }
 
 @media screen and (max-width: 578px) {
